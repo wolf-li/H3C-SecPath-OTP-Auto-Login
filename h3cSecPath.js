@@ -2338,8 +2338,8 @@
   function Main()
   {
   
-    var sshfilepath = "C:\\...\\Documents\\NetSarang Computer\\....\\ssh.csv";         // 填写存放服务器 ip 和 密码的文本地址相对路径 从用户家目录的 Documents 开始，若放在其他位置需要写全局路径
-    var ssessionPath = "C:\\...\\Documents\\NetSarang Computer\\...\\H3cSecPath.xsh";  // 填写存放保存会话的 xsh 文件全局路径
+    var sshfilepath = "C:\\...\\Documents\\NetSarang Computer\\....\\ssh.csv";         // 填写存放服务器 IP,用户名，密码的 csv 文件绝对路径
+    var ssessionPath = "C:\\...\\Documents\\NetSarang Computer\\...\\H3cSecPath.xsh";  // 填写存放保存会话的 xsh 文件绝对路径
     var token = "";                                                                    // 自己的 Google Authenticator Secret
 
     var data    =readPassFile(sshfilepath);
