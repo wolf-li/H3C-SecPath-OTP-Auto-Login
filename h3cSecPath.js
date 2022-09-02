@@ -2327,7 +2327,7 @@
       { 
           var fileline  = passFile.ReadLine();
           var arr       = fileline.split(",");
-          data.push([arr[0],arr[1]])
+          data.push([arr[0],arr[1],arr[2]])
       }
       passFile.Close();
   
@@ -2346,6 +2346,7 @@
     var IPName = xsh.Dialog.Prompt("Input the host you want login:", "Auto Login H3C SecPath","", 0);
     var IP;
     var IPpass;
+    var IPusr;
 
     for ( i=0 ; i < data.length; i++ )
     {
@@ -2353,6 +2354,7 @@
         {
             IP = IPName;
             IPpass = data[i][1];
+            IPusr = data[i][2];
             break;
         }
         else
@@ -2381,7 +2383,8 @@
     xsh.Screen.Send(IP + '\n');
     xsh.Screen.Send("1\n");
     xsh.Screen.WaitForString("login:");
-    xsh.Screen.Send("app\n");
+    xsh.Screen.Send(IPusr);
+    xsh.Screen.Send(String.fromCharCode(13));
     xsh.Screen.WaitForString("password:");
     xsh.Screen.Send(IPpass + "\n");
     xsh.Screen.Clear();
